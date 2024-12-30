@@ -13,3 +13,18 @@ window.onscroll = () => {
     }
   });
 };
+// Select all images
+const images = document.querySelectorAll(".logo img");
+
+// Add click event listener to each image
+images.forEach((img) => {
+  img.addEventListener("click", () => {
+    if (img.requestFullscreen) {
+      img.requestFullscreen(); // Open the image in full screen
+    } else if (img.webkitRequestFullscreen) {
+      img.webkitRequestFullscreen(); // For Safari
+    } else if (img.msRequestFullscreen) {
+      img.msRequestFullscreen(); // For older Microsoft Edge
+    }
+  });
+});
